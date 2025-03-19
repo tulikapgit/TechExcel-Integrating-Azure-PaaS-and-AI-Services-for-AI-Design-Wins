@@ -27,6 +27,8 @@ namespace ContosoSuites.Functions
         /// <exception cref="ArgumentNullException">Thrown if necessary configuration settings are missing.</exception>
         public CosmosChangeFeedVectorization(ILoggerFactory loggerFactory)
         {
+            try
+            {
             var endpointUrl = Environment.GetEnvironmentVariable("AzureOpenAIEndpoint");
             if (string.IsNullOrEmpty(endpointUrl))
                 throw new ArgumentNullException("AzureOpenAIEndpoint", "AzureOpenAIEndpoint is required to run this function.");            
@@ -41,6 +43,11 @@ namespace ContosoSuites.Functions
             var credentials = new DefaultAzureCredential(new DefaultAzureCredentialOptions { TenantId = tenantId });
             var openAIClient = new AzureOpenAIClient(oaiEndpoint, credentials);
             _embeddingClient = openAIClient.GetEmbeddingClient(deploymentName);   
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /// <summary>
