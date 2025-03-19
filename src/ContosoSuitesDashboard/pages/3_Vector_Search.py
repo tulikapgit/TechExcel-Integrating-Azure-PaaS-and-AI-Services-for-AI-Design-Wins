@@ -43,9 +43,6 @@ def main():
         max_results = st.text_input("Max results (<=0 will return all results):", key="max_results", value=0)
 
     minimum_similarity_score = st.slider("Minimum Similarity Score:", min_value=0.0, max_value=1.0, value=0.8, step=0.01)
-    
-    
-
 
     if st.button("Submit"):
         with st.spinner("Performing vector search..."):
@@ -62,7 +59,7 @@ def main():
                 st.table(vector_search_results.json())
             else:
                 st.warning("Please enter a query.")
-            
+
 
 if __name__ == "__main__":
     main()

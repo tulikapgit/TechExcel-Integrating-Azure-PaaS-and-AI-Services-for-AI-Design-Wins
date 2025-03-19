@@ -42,11 +42,22 @@ namespace ContosoSuites.Functions
             var oaiEndpoint = new Uri(endpointUrl);
             var credentials = new DefaultAzureCredential(new DefaultAzureCredentialOptions { TenantId = tenantId });
             var openAIClient = new AzureOpenAIClient(oaiEndpoint, credentials);
-            _embeddingClient = openAIClient.GetEmbeddingClient(deploymentName);   
+            _embeddingClient = openAIClient.GetEmbeddingClient(deploymentName);
+            if (_embeddingClient == null)
+            {
+                throw new InvalidOperationException("Failed to initialize EmbeddingClient.");
+            }
             }
             catch(Exception ex)
             {
-                throw ex;
+                if (_logger != null)
+                {
+                    _logger.LogError(ex, $"Error connecting");
+                }
+                else
+                {
+                    Console.Error.WriteLine($"Error connecting: {ex.Message}");
+                }
             }
         }
 

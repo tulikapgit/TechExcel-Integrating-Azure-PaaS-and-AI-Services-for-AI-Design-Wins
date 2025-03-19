@@ -2,33 +2,374 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Attach to .NET Functions (Windows)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "C:\\Windows\\System32\\bash.exe",
+        "pipeArgs": ["-c"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Linux)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/ssh",
+        "pipeArgs": ["adam@localhost", "-t"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (macOS)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/ssh",
+        "pipeArgs": ["adam@localhost", "-t"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (WSL)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/bash",
+        "pipeArgs": ["-c"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/ssh",
+        "pipeArgs": ["adam@remotehost", "-t"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Docker)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (SSH)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/ssh",
+        "pipeArgs": ["adam@remotehost", "-t"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote SSH)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/ssh",
+        "pipeArgs": ["adam@remotehost", "-t"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote Docker)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote WSL)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/bash",
+        "pipeArgs": ["-c"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote SSH Docker)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote SSH WSL)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/bash",
+        "pipeArgs": ["-c"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote Docker WSL)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },  {
+      "name": "Attach to .NET Functions (Remote Docker SSH)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote Docker WSL SSH)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote Docker SSH WSL)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote Docker SSH WSL)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote Docker SSH)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote Docker WSL SSH)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote Docker SSH WSL)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote Docker SSH WSL)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote Docker SSH WSL)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote Docker SSH WSL)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote Docker SSH WSL)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote Docker SSH WSL)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },
+  {
+      "name": "Attach to .NET Functions (Remote Docker SSH WSL)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "host start",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "pipeTransport": {
+        "pipeCwd": "${workspaceFolder}",
+        "pipeProgram": "/usr/bin/docker",
+        "pipeArgs": ["exec", "-i", "-t", "<container_name>", "/bin/bash"],
+        "debuggerPath": "/home/adam/.vscode/extensions/ms-dotnettools.csharp-1.23.0/.debugger/vsdbg",
+        "quoteArgs": true
+      }
+    },        
+    {
       "name": "Attach to .NET Functions",
       "type": "coreclr",
       "request": "attach",
+      "preLaunchTask": "host start",
       "processId": "${command:azureFunctions.pickProcess}"
-    },
-    {
-      "name": "Launch ContosoSuitesWebAPI",
-      "type": "coreclr",
-      "request": "launch",
-      "preLaunchTask": "build WebAPI", 
-      "program": "${workspaceFolder}/src/ContosoSuitesWebAPI/bin/Debug/net8.0/ContosoSuitesWebAPI.exe",
-      "args": [],
-      "cwd": "${workspaceFolder}/src/ContosoSuitesWebAPI",       
-      "console": "internalConsole",
-      "stopAtEntry": false     
-  },
-  {
-      "name": "Launch streamlit",
-      "type": "debugpy",
-      "request": "launch",
-      //"program": "streamlit",
-      "module": "streamlit",
-      "cwd": "${workspaceFolder}/src/ContosoSuitesDashboard",
-      "args" : [
-          "run",
-          "Index.py"
-      ]
-  }
+    }    
   ]
 }
